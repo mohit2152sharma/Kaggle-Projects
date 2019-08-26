@@ -1,0 +1,2 @@
+"0","wordcloud(lowsalary_reqskills, scale = c(3, 0.5), max.words = 200, min.freq = 100, random.order = FALSE, use.r.layout = TRUE, "
+"0","          colors = brewer.pal(8, ""Dark2""))"

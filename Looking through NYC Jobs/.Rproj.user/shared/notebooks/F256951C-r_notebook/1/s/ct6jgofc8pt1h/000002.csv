@@ -1,0 +1,1412 @@
+"0","for(i in 1:nrow(high_salary_job)){
+  result = geocode(high_salary_job$`Work Location`[i], source = 'google', output = 'latlona')
+  if(!is.na(result[1])){
+    high_salary_job$latitude[i] = as.numeric(result[1])
+    high_salary_job$longitude[i] = as.numeric(result[2])
+    high_salary_job$address[i] = as.character(result[3])
+  }else{
+    high_salary_job$latitude[i] = NA
+    high_salary_job$longitude[i] = NA
+    high_salary_job$address[i] = NA
+  }
+}
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=110+William+St.+N+Y&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=CP+Cap+Plan-Technical+Planning&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=150+William+Street,+New+York+N&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=150+William+Street,+New+York+N&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=150-14+Jamaica+Ave&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=150-14+Jamaica+Ave&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=34-02+Queens+Boulevard+Long+Is&key=xxx
+"
+"2","""34-02 Queens Boul..."" not uniquely geocoded, using ""45-2 34th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=34-02+Queens+Boulevard+Long+Is&key=xxx
+"
+"2","""34-02 Queens Boul..."" not uniquely geocoded, using ""45-2 34th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Design-Engineering&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Design-Engineering&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=28-11+Queens+Plaza+No.,+L.I.C.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Police+Plaza,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Police+Plaza,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=356+Flushing+Ave,+Brooklyn&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=356+Flushing+Ave,+Brooklyn&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+for+Exec+Proj+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+for+Exec+Proj+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=R+E+DEV+FOR+Preservation&key=xxx
+"
+"2","""R E DEV FOR Prese..."" not uniquely geocoded, using ""94 old broadway, new york, ny 10027, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Police+Plaza,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=R+E+DEV+FOR+Preservation&key=xxx
+"
+"2","""R E DEV FOR Prese..."" not uniquely geocoded, using ""94 old broadway, new york, ny 10027, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=R+E+DEV+FOR+Preservation&key=xxx
+"
+"2","""R E DEV FOR Prese..."" not uniquely geocoded, using ""94 old broadway, new york, ny 10027, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Law-EVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Law-EVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+for+Exec+Proj+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+for+Exec+Proj+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=110+William+St.+N+Y&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=110+William+St.+N+Y&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Capital+Projects-VP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Capital+Projects-VP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=421+East+26th+Street+NY+NY&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+for+Exec+Proj+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+for+Exec+Proj+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Law-EVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Law-EVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Real+Estate+Development-SVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Real+Estate+Development-SVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=33+Beaver+St,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=33+Beaver+St,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=421+East+26th+Street+NY+NY&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=421+East+26th+Street+NY+NY&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=55+Water+St+Ny+Ny&key=xxx
+"
+"2","""55 Water St Ny Ny"" not uniquely geocoded, using ""55 water street, 55 water st, new york, ny 10041, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=55+Water+St+Ny+Ny&key=xxx
+"
+"2","""55 Water St Ny Ny"" not uniquely geocoded, using ""55 water street, 55 water st, new york, ny 10041, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=22+Cortlandt+Street&key=xxx
+"
+"2","""22 Cortlandt Street"" not uniquely geocoded, using ""22 cortlandt st, new york, ny 10007, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=22+Cortlandt+Street&key=xxx
+"
+"2","""22 Cortlandt Street"" not uniquely geocoded, using ""22 cortlandt st, new york, ny 10007, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+for+Exec+Proj+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+for+Exec+Proj+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=LHD-Budget,+Personnel+&+Stats&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=LHD-Budget,+Personnel+&+Stats&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=22+Reade+St,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=22+Reade+St,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=356+Flushing+Ave,+Brooklyn&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Field+Operations+Office+of+DIR&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Field+Operations+Office+of+DIR&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=71+Smith+Avenue,+Kingston,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=71+Smith+Avenue,+Kingston,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Lead+Hazard+-+Office+of+Dir&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Lead+Hazard+-+Office+of+Dir&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=356+Flushing+Ave,+Brooklyn&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=356+Flushing+Ave,+Brooklyn&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Bay+St.,+S.I.,Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Bay+St.,+S.I.,Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=66+John+Street,+New+York,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=66+John+Street,+New+York,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=4+Metrotech,+Brooklyn+Ny+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=4+Metrotech,+Brooklyn+Ny+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Court+Square,+Queens&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Court+Square,+Queens&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=80+Maiden+Lane&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=80+Maiden+Lane&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=465+Columbus+Ave.+Valhalla,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=465+Columbus+Ave.+Valhalla,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=71+Smith+Avenue,+Kingston,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=71+Smith+Avenue,+Kingston,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=44+Beaver+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=44+Beaver+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=83+Maiden+Lane,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=83+Maiden+Lane,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Bronx+Floating+Staff&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Bronx+Floating+Staff&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Capital+Projects-VP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Capital+Projects-VP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Budget-Office+Of+Director&key=xxx
+"
+"2","""Budget-Office Of ..."" not uniquely geocoded, using ""200 w washington st # 212, indianapolis, in 46204, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Budget-Office+Of+Director&key=xxx
+"
+"2","""Budget-Office Of ..."" not uniquely geocoded, using ""200 w washington st # 212, indianapolis, in 46204, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Tech+Serv-Elevator+Div+(Hrly)&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Tech+Serv-Elevator+Div+(Hrly)&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+Of+The+Chair&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+Of+The+Chair&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+Of+The+General+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+Of+The+General+Manager&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=253+Broadway+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=253+Broadway+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+of+the+Vice-President&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+of+the+Vice-President&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+of+the+Vice-President&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Office+of+the+Vice-President&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=EVP-Compliance&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=EVP-Compliance&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1218+Prospect+Place+Bklyn,+N.Y&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1218+Prospect+Place+Bklyn,+N.Y&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Operations-EVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Operations-EVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=11+Metrotech+Center&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=11+Metrotech+Center&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Lafayette+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Lafayette+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Arsenal+830+Fifth+Ave,+New+Yor&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Arsenal+830+Fifth+Ave,+New+Yor&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Arsenal+830+Fifth+Ave,+New+Yor&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=465+Columbus+Ave.+Valhalla,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=465+Columbus+Ave.+Valhalla,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=33+Beaver+St,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=33+Beaver+St,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=465+Columbus+Ave.+Valhalla,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=465+Columbus+Ave.+Valhalla,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Capital+Projects-EVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Capital+Projects-EVP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Lafayette+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=42-09+28th+Street&key=xxx
+"
+"2","""42-09 28th Street"" not uniquely geocoded, using ""42-09 28th st, long island city, ny 11101, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Court+Square,+Queens&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Court+Square,+Queens&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=33+Beaver+St,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=33+Beaver+St,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=EVP-NextGen+Ops&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=EVP-NextGen+Ops&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=137+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=137+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1270+Victory+Blvd,+Staten+Isl&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1270+Victory+Blvd,+Staten+Isl&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Environmental+Health+&+Safety&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Real+Estate+Development-VP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Real+Estate+Development-VP&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Gold+Street&key=xxx
+"
+"2","""100 Gold Street"" not uniquely geocoded, using ""100 gold st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Gold+Street&key=xxx
+"
+"2","""100 Gold Street"" not uniquely geocoded, using ""100 gold st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Elevator+Svcs+&+Repair+(C.O.)&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Elevator+Svcs+&+Repair+(C.O.)&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=5+Manhattan+West&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=60+Bay+St.+S.I.+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=NYC+-+All+Boroughs&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Gold+Street&key=xxx
+"
+"2","""100 Gold Street"" not uniquely geocoded, using ""100 gold st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Gold+Street&key=xxx
+"
+"2","""100 Gold Street"" not uniquely geocoded, using ""100 gold st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Gold+Street&key=xxx
+"
+"2","""100 Gold Street"" not uniquely geocoded, using ""100 gold st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Gold+Street&key=xxx
+"
+"2","""100 Gold Street"" not uniquely geocoded, using ""100 gold st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59+Maiden+Lane&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59+Maiden+Lane&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=375+Pearl+Street&key=xxx
+"
+"2","""375 Pearl Street"" not uniquely geocoded, using ""375 pearl street, 375 pearl st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Brooklyn+Floating+Staff&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Brooklyn+Floating+Staff&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=15+Metrotech&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=80+Maiden+Lane&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=80+Maiden+Lane&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=EVP-Compliance&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=EVP-Compliance&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=15+Metrotech&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=City+Hall&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=City+Hall&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=55+Water+St+Ny+Ny&key=xxx
+"
+"2","""55 Water St Ny Ny"" not uniquely geocoded, using ""55 water street, 55 water st, new york, ny 10041, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=55+Water+St+Ny+Ny&key=xxx
+"
+"2","""55 Water St Ny Ny"" not uniquely geocoded, using ""55 water street, 55 water st, new york, ny 10041, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=421+East+26th+Street+NY+NY&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=55+Water+St+Ny+Ny&key=xxx
+"
+"2","""55 Water St Ny Ny"" not uniquely geocoded, using ""55 water street, 55 water st, new york, ny 10041, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=66+John+Street,+New+York,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=NYC+-+All+Boroughs&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=7870+State+Rd+42+Grahamsville,&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=7870+State+Rd+42+Grahamsville,&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=2+Metro+Tech&key=xxx
+"
+"2","""2 Metro Tech"" not uniquely geocoded, using ""2 metrotech center, brooklyn, ny 11201, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59+Maiden+Lane&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59+Maiden+Lane&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Gold+Street&key=xxx
+"
+"2","""100 Gold Street"" not uniquely geocoded, using ""100 gold st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Gold+Street&key=xxx
+"
+"2","""100 Gold Street"" not uniquely geocoded, using ""100 gold st, new york, ny 10038, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Flushing+Meadow+Pk+Olmsted+Ctr&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Flushing+Meadow+Pk+Olmsted+Ctr&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Flushing+Meadow+Pk+Olmsted+Ctr&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=150+William+Street,+New+York+N&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=335+Adams+Street,+Brooklyn+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=100+Church+St.,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=105+East+106+Street,+New+York,&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=105+East+106+Street,+New+York,&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=R+E+DEV+FOR+New+Construction&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=R+E+DEV+FOR+New+Construction&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=R+E+DEV+FOR+New+Construction&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=R+E+DEV+FOR+New+Construction&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=280+Broadway,+7th+Floor,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=280+Broadway,+7th+Floor,+N.Y.&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=96-05+Horace+Harding+Expway&key=xxx
+"
+"2","""96-05 Horace Hard..."" not uniquely geocoded, using ""96-05 horace harding expy, elmhurst, ny 11373, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=33+Beaver+St,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=33+Beaver+St,+New+York+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=59-17+Junction+Blvd+Corona+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+Street+Ny,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=1+Centre+Street+Ny,+Ny&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=30-30+Thomson+Ave+L+I+City+Qns&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=255+Greenwich+Street&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=120+Broadway,+New+York,+NY&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=75-20+Astoria+Blvd&key=xxx
+"
+"2","""75-20 Astoria Blvd"" not uniquely geocoded, using ""bulova building, 75-20 astoria blvd, east elmhurst, ny 11370, usa""
+"
+"2","There were 37 warnings (use warnings() to see them)"
+"2","
+"

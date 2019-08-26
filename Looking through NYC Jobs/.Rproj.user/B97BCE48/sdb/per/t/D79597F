@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1563385040128.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D79597F",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1563385040128,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "37603B16",
+        "caption" : "salary_geocodes",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=salary_geocodes&cache_key=37603B16",
+        "displayedObservations" : "2524",
+        "environment" : "",
+        "object" : "salary_geocodes",
+        "preview" : "0",
+        "totalObservations" : "2524",
+        "variables" : "33"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

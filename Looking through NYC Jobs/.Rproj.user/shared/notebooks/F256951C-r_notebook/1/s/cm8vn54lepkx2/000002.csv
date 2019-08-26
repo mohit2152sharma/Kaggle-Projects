@@ -1,0 +1,14 @@
+"0","library(readxl) #reading csv files"
+"2","Warning message:
+"
+"2","R graphics engine version 12 is not supported by this version of RStudio. The Plots tab will be disabled until a newer version of RStudio is installed. 
+"
+"0","library(tidyverse) #metapackage for plotting and data manipulation"
+"0","library(magrittr) #pipe operator"
+"0","library(tm) #for text mining"
+"0","library(SnowballC) #for stemming"
+"0","library(wordcloud) #for plotting wordcloud"
+"0","library(RColorBrewer) #for color pallette"
+"0","library(ggmap) #for getting geocodes "
+"0","library(leaflet) #for plotting map"
+"0","library(mapview)"
