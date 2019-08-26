@@ -1,0 +1,130 @@
+---
+title: 'GoodReads Books'
+author: 'Mohit Sharma'
+date: '27 July 2017'
+output:
+  html_document:
+    number_sections: true
+    toc: true
+    fig_width: 7
+    fig_height: 4.5
+---
+
+R notebook for good reads book
+
+# Loading Dataset
+
+```{r global_chunks}
+knitr::opts_chunk$set(echo=FALSE)
+```
+```{r require_packages}
+library(readr)
+library(tidyverse)
+
+```
+
+```{r load_data, message=FALSE }
+book_data = read_csv('./input/books.csv')
+```
+Ahh, there are some parsing failures. Let's take a look at them
+```{r}
+parsing_failure = problems(book_data)
+head(parsing_failure)
+```
+Most of the problems, are because of the missing title, anyway as the number of problems is very less `r length(parsing_failure)` rows, I am going to ignore them.
+
+# Exploratory Data Analysis
+
+## Looking at Data
+
+Looking at the structure and summary of data.
+```{r data_summary}
+
+glimpse(book_data)
+summary(book_data)
+
+```
+
+## Removing NAs
+
+We have ratings of almost 11k books, with an average rating of 3.9. Although there are some books for which the rating data is unavialable.
+Let's find out the book for which rating data is missing.
+
+```{r na_book}
+
+titles = c('Books without average rating', 'Books without no number of pages', 
+          'Books without ratings count', 'Books without text review count' )
+col_names = c('average_rating', '# num_pages', 'ratings_count', 'text_reviews_count')
+for(i in c(1:4)){
+  print(titles[[i]])
+  print(rep('-', 30), quote = FALSE)
+  book_names = book_data[which(is.na(book_data[col_names[i]])), 2]
+  for(j in 1:nrow(book_names)){
+    book_name_word = strsplit(book_names$title[j], " ")
+    book_name = paste(book_name_word[[1]][1:4], collapse = " ")
+    book_name = paste(book_name, '....')
+    print(book_name)
+  }
+  print(rep('-', 30), quote = FALSE)
+}
+
+```
+
+Removing above books.
+```{r remov_na}
+book_data = book_data[-which(is.na(book_data$average_rating)), ]
+```
+
+## Looking more
+
+### Number of books by language
+
+Let's what are the languages available in our dataset and which language has the most
+
+```{r language}
+
+data = book_data %>% select(language_code) %>% group_by(language_code) %>% 
+  summarize(n()) %>% arrange(desc(`n()`)) %>% rename('count' = `n()`)
+
+ggplot(data, aes(x = reorder(language_code, count), y = count)) +
+  geom_bar(stat= 'identity', fill = 'steelblue') +
+  geom_text(aes(label = count), hjust = -0.1, vjust= 0.5, size =3) +
+  coord_flip() +
+  labs(title = 'number of books by language') + xlab('language code')
+
+ggsave('./output/nbooks_language.jpeg', device = 'jpeg')
+
+```
+The language 'eng' accounts for most number of books, i.e. roughly `r round(max(data$count)/sum(data$count), 2)*100`% of total books.
+
+All the languages which have number of books less than let's say 50, I am clubbing them as other for simplicity. 
+
+```{r}
+book_data %>% group_by(language_code) %>% summarize(n()) %>%
+  rename('count' = `n()`) %>% mutate(lang_code_simple = ifelse(count > 50,
+                                                               language_code,
+                                                               'other')) -> book_data2
+
+book_data = left_join(book_data, book_data2 %>% select(language_code, lang_code_simple), by = c('language_code' = 'language_code'))
+```
+
+```{r pie_plot}
+
+blank_theme = theme(
+  axis.title = element_blank(),
+  axis.ticks = element_blank(),
+  panel.border = element_blank(),
+  panel.grid = element_blank(),
+  axis.text.x = element_blank()
+)
+
+p = ggplot(book_data2, aes(x = "", y = count, fill = lang_code_simple)) +
+  geom_bar(stat= 'identity', width = 1 )
+
+p + coord_polar("y", start = 0) + blank_theme
+
+ggsave('./output/pie_language.jpeg')
+
+```
+
+

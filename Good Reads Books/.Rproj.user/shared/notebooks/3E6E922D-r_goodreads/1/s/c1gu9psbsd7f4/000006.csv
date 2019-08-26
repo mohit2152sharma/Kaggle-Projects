@@ -1,0 +1,12 @@
+"0","book_data = read_csv('./input/books.csv')
+"
+"2","23 parsing failures.
+ row            col           expected            actual                file
+1842 title          delimiter or quote                   './input/books.csv'
+1842 title          delimiter or quote I                 './input/books.csv'
+4011 average_rating a double           Jr.-Sam B. Warner './input/books.csv'
+4011 # num_pages    a double           en-US             './input/books.csv'
+4011 NA             10 columns         11 columns        './input/books.csv'
+.... .............. .................. ................. ...................
+See problems(...) for more details.
+"

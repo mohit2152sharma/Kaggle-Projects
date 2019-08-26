@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: 'GoodReads Books'\nauthor: 'Mohit Sharma'\ndate: '27 July 2017'\noutput:\n  html_document:\n    number_sections: true\n    toc: true\n    fig_width: 7\n    fig_height: 4.5\n---\n\nR notebook for good reads book\n\n# Loading Dataset\n\n```{r global_chunks}\nknitr::opts_chunk$set(echo=FALSE)\n```\n```{r require_packages}\nlibrary(readr)\nlibrary(tidyverse)\n\n```\n\n```{r load_data, message=FALSE }\nbook_data = read_csv('./input/books.csv')\n```\nAhh, there are some parsing failures. Let's take a look at them\n```{r}\nparsing_failure = problems(book_data)\nhead(parsing_failure)\n```\nMost of the problems, are because of the missing title, anyway as the number of problems is very less `r length(parsing_failure)` rows, I am going to ignore them.\n\n# Exploratory Data Analysis\n\n## Looking at Data\n\nLooking at the structure and summary of data.\n```{r data_summary}\n\nglimpse(book_data)\nsummary(book_data)\n\n```\n\n## Removing NAs\n\nWe have ratings of almost 11k books, with an average rating of 3.9. Although there are some books for which the rating data is unavialable.\nLet's find out the book for which rating data is missing.\n\n```{r na_book}\n\ntitles = c('Books without average rating', 'Books without no number of pages', \n          'Books without ratings count', 'Books without text review count' )\ncol_names = c('average_rating', '# num_pages', 'ratings_count', 'text_reviews_count')\nfor(i in c(1:4)){\n  print(titles[[i]])\n  print(rep('-', 30), quote = FALSE)\n  book_names = book_data[which(is.na(book_data[col_names[i]])), 2]\n  for(j in 1:nrow(book_names)){\n    book_name_word = strsplit(book_names$title[j], \" \")\n    book_name = paste(book_name_word[[1]][1:4], collapse = \" \")\n    book_name = paste(book_name, '....')\n    print(book_name)\n  }\n  print(rep('-', 30), quote = FALSE)\n}\n\n```\n\nRemoving above books.\n```{r remov_na}\nbook_data = book_data[-which(is.na(book_data$average_rating)), ]\n```\n\n## Looking more\n\n### Number of books by language\n\nLet's what are the languages available in our dataset and which language has the most\n\n```{r language}\n\ndata = book_data %>% select(language_code) %>% group_by(language_code) %>% \n  summarize(n()) %>% arrange(desc(`n()`)) %>% rename('count' = `n()`)\n\nggplot(data, aes(x = reorder(language_code, count), y = count)) +\n  geom_bar(stat= 'identity', fill = 'steelblue') +\n  geom_text(aes(label = count), hjust = -0.1, vjust= 0.5, size =3) +\n  coord_flip() +\n  labs(title = 'number of books by language') + xlab('language code')\n\nggsave('./output/nbooks_language.jpeg', device = 'jpeg')\n\n```\nThe language 'eng' accounts for most number of books, i.e. roughly `r round(max(data$count)/sum(data$count), 2)*100`% of total books.\n\nAll the languages which have number of books less than let's say 50, I am clubbing them as other for simplicity. \n\n```{r}\nbook_data %>% group_by(language_code) %>% summarize(n()) %>%\n  rename('count' = `n()`) %>% mutate(lang_code_simple = ifelse(count > 50,\n                                                               language_code,\n                                                               'other')) -> book_data2\n\nbook_data = left_join(book_data, book_data2 %>% select(language_code, lang_code_simple), by = c('language_code' = 'language_code'))\n```\n\n```{r pie_plot}\n\nblank_theme = theme(\n  axis.title = element_blank(),\n  axis.ticks = element_blank(),\n  panel.border = element_blank(),\n  panel.grid = element_blank(),\n  axis.text.x = element_blank()\n)\n\np = ggplot(book_data2, aes(x = \"\", y = count, fill = lang_code_simple)) +\n  geom_bar(stat= 'identity', width = 1 )\n\np + coord_polar(\"y\", start = 0) + blank_theme\n\nggsave('./output/pie_language.jpeg')\n\n```\n\n\n",
+    "created" : 1563553240988.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3069588230",
+    "id" : "1DF2AD63",
+    "lastKnownWriteTime" : 1564563340,
+    "last_content_update" : 1564563340178,
+    "path" : "C:/Users/kswp234/Box Sync/3rd Rotation/GitHub/Kaggle/Good Reads Books/r_goodreads.Rmd",
+    "project_path" : "r_goodreads.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
